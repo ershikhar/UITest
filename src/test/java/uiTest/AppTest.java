@@ -3,6 +3,7 @@ package uiTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import junit.framework.Assert;
 import junit.framework.Test;
@@ -41,7 +42,7 @@ public class AppTest
     public void testApp() throws InterruptedException
     {
     	System.setProperty("webdriver.chrome.driver", "./src/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = new FirefoxDriver();
         driver.get("http://localhost:9999/index.html#");
         Thread.sleep(4000);
         Assert.assertTrue(driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div/h2")).getText().equals("Shipwreck List"));
