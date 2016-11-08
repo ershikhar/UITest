@@ -8,7 +8,7 @@ import junit.framework.Assert;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-
+//import org.junit.Test;
 /**
  * Unit test for simple App.
  */
@@ -35,14 +35,18 @@ public class AppTest
 
     /**
      * Rigourous Test :-)
+     * @throws InterruptedException 
      */
-    public void testApp()
+    @org.testng.annotations.Test
+    public void testApp() throws InterruptedException
     {
     	System.setProperty("webdriver.chrome.driver", "C://chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://localhost:9999/index.html#");
+        Thread.sleep(4000);
         Assert.assertTrue(driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div/h2")).getText().equals("Shipwreck List"));
-        
+        driver.close();
+        driver.quit();
         
     }
 }
