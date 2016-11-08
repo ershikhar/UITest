@@ -40,7 +40,7 @@ public class AppTest
     @org.testng.annotations.Test
     public void testApp() throws InterruptedException
     {
-    	System.setProperty("webdriver.chrome.driver", "C://chromedriver.exe");
+    	System.setProperty("webdriver.chrome.driver", "./src/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://localhost:9999/index.html#");
         Thread.sleep(4000);
